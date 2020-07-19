@@ -20,7 +20,7 @@ class App extends React.Component {
         text: 'drive to carwash',
         date: '2020-10-25',
         important: false,
-        active: false,
+        active: true,
         finishDateTask: null
       },
       {
@@ -77,7 +77,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        To-Do-App-1.0
+        <h1>TO_DO_APP_1.0</h1>
         <AddTask />
         <TaskList tasks={this.state.tasks} delete={this.deleteTask} change={this.changeTaskStatus} />
       </div>

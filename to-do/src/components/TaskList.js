@@ -16,13 +16,13 @@ const TaskList = (props) => {
     <>
       <div className="active">
         <h1>Tasks to do</h1>
-        {activeTasks}
+        {activeTasks.length > 0 ? activeTasks : <p>Zero tasks, you have free time!</p>}
       </div>
 
       <hr />
 
       <div className="done">
-        <h3>Tasks done (0)</h3>
+        <h3>Tasks done (<em>{done.length}</em>)</h3>
         {doneTasks}
       </div>
     </>
