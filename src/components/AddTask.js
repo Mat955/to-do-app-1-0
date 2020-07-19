@@ -41,7 +41,7 @@ class AddTask extends React.Component {
         });
       }
     } else {
-      console.log('too short');
+      alert('need more words...');
     }
   }
 
