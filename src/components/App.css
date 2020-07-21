@@ -71,14 +71,14 @@
 
 @media(max-width: 899px) {
   .app-wrapper {
-    min-width: 560px;
+    min-width: 600px;
     padding: 15px;
   }
 }
 
 @media(max-width: 599px) {
   .app-wrapper {
-    min-width: 400px;
+    min-width: 500px;
     padding: 0;
   }
 }

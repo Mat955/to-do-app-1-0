@@ -12,12 +12,11 @@ const Task = (props) => {
   if (active) {
     return (
       <div className="list-item">
-        <div className="date-tasks">
-          <span>{date}</span>
-          <div className='task-name'><strong style={important ? style : null}>{text}</strong></div>
+        <span>{date}</span><strong style={important ? style : null}>{text}</strong>
+        <div className="buttons-list">
+          <button className='btn-delete task-btn' onClick={() => props.delete(id)}><i className="fa fa-trash"></i></button>
+          <button className='btn-done task-btn' onClick={() => props.change(id)}><i className="fa fa-check-circle"></i></button>
         </div>
-        <button className='btn-delete task-btn' onClick={() => props.delete(id)}><i className="fa fa-trash"></i></button>
-        <button className='btn-done task-btn' onClick={() => props.change(id)}><i className="fa fa-check-circle"></i></button>
       </div >
     );
   } else {
@@ -26,11 +25,10 @@ const Task = (props) => {
     return (
       <div className="list-item-done">
         <p>Task finished:</p>
-        <span>{finish}</span><br />
-        <p className="task-name-done"><strong>{text}</strong></p>
-        <em> (to do - {date}) </em>
+        <span>{finish}</span><strong>{text}</strong>
+        <div><p> (to do - {date}) </p></div>
         <button className='btn-delete task-btn' onClick={() => props.delete(id)}><i className="fa fa-trash"></i></button>
-      </div>
+      </div >
     );
   }
 }
