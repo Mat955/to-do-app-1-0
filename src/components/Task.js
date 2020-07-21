@@ -1,4 +1,5 @@
 import React from 'react';
+import './Task.css'
 
 const Task = (props) => {
 
@@ -10,23 +11,26 @@ const Task = (props) => {
 
   if (active) {
     return (
-      <div>
-        <p>
-          <strong style={important ? style : null}>{text}</strong> - to <span>{date}</span>
-          <button onClick={() => props.change(id)}>It's done</button>
-          <button onClick={() => props.delete(id)}>X</button>
-        </p>
-      </div>
+      <div className="list-item">
+        <div className="date-tasks">
+          <span>{date}</span>
+          <div className='task-name'><strong style={important ? style : null}>{text}</strong></div>
+        </div>
+        <button className='btn-delete task-btn' onClick={() => props.delete(id)}><i className="fa fa-trash"></i></button>
+        <button className='btn-done task-btn' onClick={() => props.change(id)}><i className="fa fa-check-circle"></i></button>
+      </div >
     );
   } else {
 
     const finish = new Date(finishDateTask).toDateString();
     return (
-      <p>
-        <strong>{text}</strong><em> (to do - {date}) </em><br />
-        -confirmation of execution <span> {finish} </span>
-        <button onClick={() => props.delete(id)}>X</button>
-      </p>
+      <div className="list-item-done">
+        <p>Task finished:</p>
+        <span>{finish}</span><br />
+        <p className="task-name-done"><strong>{text}</strong></p>
+        <em> (to do - {date}) </em>
+        <button className='btn-delete task-btn' onClick={() => props.delete(id)}><i className="fa fa-trash"></i></button>
+      </div>
     );
   }
 }

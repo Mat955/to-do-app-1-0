@@ -1,0 +1,93 @@
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+.list-item, .list-item-done {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+  padding-bottom: 5px;
+}
+
+.task-name, .task-name-done {
+  color: #999;
+  min-width: 60%;
+  text-align: center;
+}
+
+.list-item-done em, .list-item-done span, .list-item-done p {
+  font-size: 12px;
+}
+
+.task-btn {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.btn-done i, .btn-delete i {
+  font-size: 14px;
+  color: #bbb;
+  margin-right: 20px;
+}
+
+@media(max-width: 899px) {
+  .task-name {
+    font-size: 14px;
+  }
+}
+
+@media(max-width: 599px) {
+  .task-name {
+    font-size: 10px;
+  }
+  .btn-delete i, .btn-done i {
+    font-size: 10px;
+  }
+  .list-item span {
+    font-size: 12px;
+  }
+  .list-item-done em, .list-item-done span, .list-item-done p {
+    font-size: 10px;
+  }
+}
+
+@media(max-width: 499px) {
+
+  .date-tasks {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding-bottom: 5px;
+  }
+
+  .task-name {
+    font-size: 12px;
+    padding: 10px
+  }
+
+  .list-item-done {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+  }
+
+  .list-item-done p, .list-item-done span, .list-item-done em {
+    padding: 5px;
+    font-size: 14px;
+  }
+
+  .list-item-done .btn-delete i {
+    font-size: 14px;
+  }
+
+  /* .date-tasks span {
+    text-align: center;
+  } */
+}

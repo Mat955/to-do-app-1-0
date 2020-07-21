@@ -1,16 +1,80 @@
-input {
-  margin: 10px;
-  padding: 5px 10px;
-  font-size: 20px;
-}
+@import url('https://fonts.googleapis.com/css?family=Josefin+Slab:300,400,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
 
 .form {
-  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
-.form button {
-  padding: 3px 10px;
-  text-transform: uppercase;
-  margin: 20px;
-  font-size: 18px;
+.task-input {
+  width: 350px;
+  min-width: 250px;
+  padding: 15px 10px 10px 20px;
+  margin-right: 10px;
+  font-size: 15px;
+  color: #ccc;
+  background-color: #1d222b;
+  border: 1px solid #444;
+  outline: none;
+  border-radius: 20px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.date-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.date-wrapper label, .buttons-checks label  {
+  font-size: 16px;
+  padding-right: 10px;
+  color: #ccc;
+}
+
+.date-wrapper input {
+  background-color: silver;
+  padding: 0 20px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+  border: 1px solid #444;
+  outline: none;
+  border-radius: 20px;
+}
+
+::-webkit-datetime-edit-month-field { color: #790e43; }
+::-webkit-datetime-edit-day-field { color: #790e43; }
+::-webkit-datetime-edit-year-field { color: #790e43; }
+::-webkit-inner-spin-button { display: none; }
+
+
+.buttons-checks {
+  display: flex;
+}
+
+.btn {
+  margin: 10px;
+}
+
+.add-task-btn {
+  min-width: 100px;
+  background-color: #790e43;
+  color: #ccc;
+  border: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  border-radius: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  outline: none;
+  cursor: pointer;
+}
+
+@media(max-width: 499px) {
+  .task-input  {
+    width: 280px;
+  }
 }

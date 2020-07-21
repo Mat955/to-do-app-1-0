@@ -51,12 +51,16 @@ class AddTask extends React.Component {
 
     return (
       <div className="form">
-        <input type="text" placeholder="add task" value={this.state.text} id="important" onChange={this.handleText} />
-        <input type="checkbox" checked={this.state.checked} onChange={this.handleCheckbox} />
-        <label htmlFor="important">Priority</label><br />
-        <label htmlFor="date">Date to do: </label>
-        <input type="date" value={this.state.date} min={this.minDate} max={maxDate} onChange={this.handleDate} /><br />
-        <button onClick={this.handleClick}>Add</button>
+        <input className="task-input" type="text" placeholder="add task" maxLength="30" value={this.state.text} id="important" onChange={this.handleText} />
+        <div className="date-wrapper">
+          <label htmlFor="date">Date to do: </label>
+          <input type="date" value={this.state.date} min={this.minDate} max={maxDate} onChange={this.handleDate} />
+        </div>
+        <div className="buttons-checks">
+          <input className="btn input-check" type="checkbox" checked={this.state.checked} onChange={this.handleCheckbox} />
+          <label className="btn" htmlFor="important">Priority</label>
+          <button className="btn add-task-btn" onClick={this.handleClick}>Add</button>
+        </div>
       </div>
     );
   }

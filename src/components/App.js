@@ -5,42 +5,9 @@ import './App.css';
 
 class App extends React.Component {
 
-  counter = 4;
+  counter = 0;
   state = {
-    tasks: [
-      {
-        id: 0,
-        text: 'play a game',
-        date: '2020-11-07',
-        important: false,
-        active: true,
-        finishDateTask: null
-      },
-      {
-        id: 1,
-        text: 'drive to carwash',
-        date: '2020-10-25',
-        important: false,
-        active: true,
-        finishDateTask: null
-      },
-      {
-        id: 2,
-        text: 'buy flowers for mom day',
-        date: '2020-09-07',
-        important: true,
-        active: true,
-        finishDateTask: null
-      },
-      {
-        id: 3,
-        text: 'gain 5kg of muscle',
-        date: '2020-10-10',
-        important: true,
-        active: true,
-        finishDateTask: null
-      },
-    ]
+    tasks: []
   }
 
   deleteTask = (id) => {
@@ -96,10 +63,15 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
-        <h1>TO_DO_APP_1.0</h1>
-        <AddTask add={this.addTask} />
-        <TaskList tasks={this.state.tasks} delete={this.deleteTask} change={this.changeTaskStatus} />
+      <div className="container">
+        <div className="app-wrapper">
+          <h1>Task App 1.0</h1>
+          <div className="main">
+            <AddTask add={this.addTask} />
+            <TaskList tasks={this.state.tasks} delete={this.deleteTask} change={this.changeTaskStatus} />
+          </div>
+          <footer>Copyright @2020 | Mateusz Lewartowski</footer>
+        </div>
       </div>
     )
   }
